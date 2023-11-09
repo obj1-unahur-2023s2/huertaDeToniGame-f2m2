@@ -1,0 +1,72 @@
+import juegoConfig.*
+import wollok.game.*
+
+describe "Test de juegoConfig" {
+	
+	//puntaje
+	test "la cantidad inicial de puntos = 0" {
+		assert.equals(0, puntaje.puntos())
+	}
+	
+	test "cuando le sumo 10 puntos, los puntos = 10" {
+		puntaje.sumarPuntos(10) //10 es el puntaje que te da matar un pato 
+		assert.equals(10, puntaje.puntos())
+	}
+	
+	test "luego haberle sumado los 10 puntos, si le sumo 20 mas, los puntos = 30" {
+		puntaje.sumarPuntos(10) //10 es el puntaje que te da matar un pato 
+		puntaje.sumarPuntos(20) //10 es el puntaje que te da matar un patoDorado 
+		assert.equals(30, puntaje.puntos())
+	}
+	
+	test "el puntaje no es un pato" {
+		assert.notThat(puntaje.esPato())
+	}
+	
+	test "el puntaje no es un patoDorado" {
+		assert.notThat(puntaje.esPatoDorado())
+	}
+	
+	//fondoReglas
+	test "el fondoReglas no es un pato" {
+		assert.notThat(fondoReglas.esPato())
+	}
+	
+	test "el fondoReglas no es un patoDorado" {
+		assert.notThat(fondoReglas.esPatoDorado())
+	}
+	
+	//fondoJuego
+	test "el fondoJuego no es un pato" {
+		assert.notThat(fondoJuego.esPato())
+	}
+	
+	test "el fondoJuego no es un patoDorado" {
+		assert.notThat(fondoJuego.esPatoDorado())
+	}
+	
+	//fondoFinal
+	test "el fondoFinal no es un pato" {
+		assert.notThat(fondoFinal.esPato())
+	}
+	
+	test "el fondoFinal no es un patoDorado" {
+		assert.notThat(fondoFinal.esPatoDorado())
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

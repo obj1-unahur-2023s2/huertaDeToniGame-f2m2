@@ -1,0 +1,88 @@
+import personajes.*
+import wollok.game.*
+
+describe "test de personajes" {
+	const pato = new Patos(position = game.center())
+	const patoDorado = new PatosDorados(position = game.center())
+	
+	//arma
+	test "la cantidad de balas iniciales de un arma es 5" {
+		assert.equals(5, arma.balas())
+	}
+	
+	test "el arma no es ni pato ni patoDorado" {
+		assert.notThat(arma.esPato())
+		assert.notThat(arma.esPatoDorado())
+	}
+	
+	test "cuando disparo 2 veces, el total de balas = 3" {
+		arma.balas(3) //en este caso debemos setearlo porque no podemos ejecutar el method disparar()
+		assert.equals(3, arma.balas())
+	}
+	
+	test "cuando disparo 2 veces, y agrego 2 balas, el total de balas = 5" {
+		arma.balas(3) //en este caso debemos setearlo porque no podemos ejecutar el method disparar()
+		arma.agregarDosBalas()
+		assert.equals(5, arma.balas())
+	}
+	
+	//balas
+	test "las balas no son pato" {
+		assert.notThat(balas.esPato())
+	}
+	
+	test "las balas no son patoDorado" {
+		assert.notThat(balas.esPatoDorado())
+	}
+	
+	//cuadroPuntos
+	test "el cuadroPuntos no es un pato" {
+		assert.notThat(cuadroPuntos.esPato())
+	}
+	
+	test "el cuadroPuntos no es un patoDorado" {
+		assert.notThat(cuadroPuntos.esPatoDorado())
+	}
+	
+	//perro
+	test "el perro no es un pato" {
+		assert.notThat(perro.esPato())
+	}
+	
+	test "el perro no es un patoDorado" {
+		assert.notThat(perro.esPatoDorado())
+	}
+	
+	//pato
+	test "el pato si es un pato" {
+		assert.that(pato.esPato())
+	}
+	
+	test "el pato no es un patoDorado" {
+		assert.notThat(pato.esPatoDorado())
+	}
+	
+	//patoDorado
+	test "el patoDorado no es un pato" {
+		assert.notThat(patoDorado.esPato())
+	}
+	
+	test "el patoDorado es un patoDorado" {
+		assert.that(patoDorado.esPatoDorado())
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

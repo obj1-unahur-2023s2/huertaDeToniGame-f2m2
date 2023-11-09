@@ -1,0 +1,12 @@
+import juegoConfig.*
+import wollok.game.*
+
+program exe {
+	game.title("Duck Hunt")
+    game.cellSize(200)
+    game.height(4)
+    game.width(6)
+	juego.inicio()
+	game.start()
+}
+
