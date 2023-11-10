@@ -24,6 +24,7 @@ class SonidoRecargas {
 
 
 class Musica {
+	method hayMusica() = true
 	method musicaDeFondo(musica) {
 		musica.volume(0.5)
 		game.schedule(200, {musica.play()})
@@ -40,6 +41,11 @@ class MusicaDeJuego inherits Musica {
 class MusicaFinal inherits Musica {
 	const property finalMusic = game.sound("./sounds/gameOver.mp3")
 	
+}
+
+
+class MusicaNivelDos inherits Musica {
+	const property musicGame = game.sound("./sounds/segundoNivel2.mp3")
 }
 
 
